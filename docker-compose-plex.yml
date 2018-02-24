@@ -19,6 +19,6 @@ services:
       - ADVERTISE_IP=http://192.168.8.102:32400/
     hostname: foecum.plex
     volumes:
-      - ~/Plex/database:/config
-      - ~/Plex/transcode/tmp:/transcode
-      - ~/Plex/media/:/data
+      - ~/plex/database:/config
+      - ~/plex/transcode/tmp:/transcode
+      - /media/data:/data/media

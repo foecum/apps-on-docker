@@ -12,9 +12,9 @@ services:
     image: ekho/utorrent:latest
     container_name: utorrent
     volumes:
-      - /home/foecum/Utorrent/Data:/utorrent/data
+      - ~/utorrent/data:/utorrent/data
       - utorrent-settings:/utorrent/settings
-      - /home/foecum/Utorrent/Torrent-files/utserver.conf:/utorrent/utserver.conf
+      - ~/utorrent/torrent-files/utserver.conf:/utorrent/utserver.conf
     environment:
       HOST_UID: 1002
       HOST_GID: 1002
@@ -45,12 +45,11 @@ services:
     environment:
       - TZ=Africa/Johannesburg
       - ADVERTISE_IP=http://192.168.8.102:32400/
-      - PLEX_CLAIM="claim-six6Z13rkYykq3ifaZP3"
     hostname: foecum.plex
     volumes:
-      - ~/Plex/database:/config
-      - ~/Plex/transcode/tmp:/transcode
-      - /media/foecum:/data/media
+      - ~/plex/database:/config
+      - ~/plex/transcode/tmp:/transcode
+      - /media/data:/data/media
 
   portainer:
     container_name: portainer

@@ -9,4 +9,6 @@ To access it go to http://ip-address:8080/gui
 ### [Plex media server](https://github.com/plexinc/pms-docker)
 This is a really awesome media player. To access go to http://ip-address:32400
 
+**NB**: The Plex database folder can grow large (mine grew to 10GB) so be sure to map it to a folder on a partition with enough space
+
 
