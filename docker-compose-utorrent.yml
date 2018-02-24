@@ -1,0 +1,23 @@
+version: '3'
+services:
+  utorrent:
+    image: ekho/utorrent:latest
+    container_name: utorrent
+    volumes:
+      - /home/foecum/Utorrent/Data:/utorrent/data
+      - utorrent-settings:/utorrent/settings
+      - /home/foecum/Utorrent/Torrent-files/utserver.conf:/utorrent/utserver.conf
+    environment:
+      HOST_UID: 1002
+      HOST_GID: 1002
+    ports:
+      - 8080:8080
+      - 6881:6881
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+volumes:
+  utorrent-settings:
