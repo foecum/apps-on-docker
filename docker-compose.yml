@@ -1,5 +1,13 @@
 version: '3'
 services:
+  nginx:
+    container_name: nginx
+    build:
+        context: dockerfiles/nginx
+        dockerfile: Dockerfile
+    ports:
+        - 80:8000
+
   utorrent:
     image: ekho/utorrent:latest
     container_name: utorrent
